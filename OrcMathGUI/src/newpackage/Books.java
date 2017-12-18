@@ -23,6 +23,7 @@ public class Books extends AnimatedComponent {
 		Thread animation = new Thread(this);
 		animation.start();
 		update();
+		
 		// TODO Auto-generated constructor stub
 	}
 
