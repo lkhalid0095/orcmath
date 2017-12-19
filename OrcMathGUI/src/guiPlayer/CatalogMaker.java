@@ -41,7 +41,7 @@ public class CatalogMaker {
 	}
 
 	private void create() {
-		
+
 		boolean running = true;
 		while(running){
 			showCatalog();
