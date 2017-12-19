@@ -14,7 +14,7 @@ import guiTeacher.components.*;
 import guiTeacher.interfaces.KeyedComponent;
 import guiTeacher.interfaces.Visible;
 import guiTeacher.userInterfaces.FullFunctionScreen;
-import newpackage.Books;
+import lubna.Books;
 
 public class Sampler extends GUIApplication {
 

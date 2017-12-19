@@ -1,4 +1,4 @@
-package newpackage;
+package lubna;
 
 import java.awt.Color;
 import java.awt.Graphics2D;

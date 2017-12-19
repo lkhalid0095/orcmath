@@ -1,4 +1,4 @@
-package newpackage;
+package lubna;
 
 import java.io.BufferedReader;
 
@@ -40,7 +40,7 @@ public class FileLoadingConsole {
 
 
 
- private static void testSaveContent(String fileName) {
+ public static void testSaveContent(String fileName) {
 
  try{    
 
