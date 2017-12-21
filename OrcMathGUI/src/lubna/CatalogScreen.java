@@ -42,7 +42,7 @@ public class CatalogScreen extends FullFunctionScreen implements FileRequester {
 		viewObjects.add(page);
 		text = new TextArea(500, 40, 100, 100, "This is where the text goes.");
 		viewObjects.add(text);
-		addButton = new Button(40,400,40,40, "Add",new Action() {
+		addButton = new Button(40,300,40,40, "Add",new Action() {
 		
 			@Override
 			public void act() {
@@ -51,7 +51,7 @@ public class CatalogScreen extends FullFunctionScreen implements FileRequester {
 			}
 		});
 		viewObjects.add(addButton);
-		deleteButton = new Button(40,600,40,40, "Delete",new Action() {
+		deleteButton = new Button(40,350,50,50, "Delete" ,new Action() {
 			
 			@Override
 			public void act() {
@@ -61,7 +61,7 @@ public class CatalogScreen extends FullFunctionScreen implements FileRequester {
 			}
 		});
 		viewObjects.add(deleteButton);
-		saveButton = new Button(40,800,40,40, "Save",new Action() {
+		saveButton = new Button(40,400,40,40, "Save",new Action() {
 			
 			@Override
 			public void act() {
@@ -70,7 +70,7 @@ public class CatalogScreen extends FullFunctionScreen implements FileRequester {
 			}
 		});
 		viewObjects.add(saveButton);
-		loadButton = new Button(40,1000,40,40, "Load",new Action() {
+		loadButton = new Button(40,450,40,40, "Load",new Action() {
 			
 			@Override
 			public void act() {
@@ -79,7 +79,7 @@ public class CatalogScreen extends FullFunctionScreen implements FileRequester {
 			}
 		});
 		viewObjects.add(loadButton);
-		openButton = new FileOpenButton(40,1200,40,40, null,this);
+		openButton = new FileOpenButton(40,500,60,60, null,this);
 		viewObjects.add(openButton);
 		}
 	
@@ -105,7 +105,7 @@ public class CatalogScreen extends FullFunctionScreen implements FileRequester {
 		list.setText(catalog.getCSVContent());
 		name.setText("");
 		author.setText("");
-		Integer.parseInt(page.setText(""));
+		page.setText("");
 		
 	}
 
