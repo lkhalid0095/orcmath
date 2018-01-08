@@ -35,7 +35,7 @@ public class ProgressTyler extends Component implements ProgressInterfaceLubna {
 	@Override
 	public void update(Graphics2D g) {
 		if(progress) {
-			
+			system
 		}
 		else {
 			

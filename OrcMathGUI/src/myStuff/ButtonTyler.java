@@ -9,6 +9,8 @@ import guiTeacher.components.Button;
 public class ButtonTyler extends Button implements ButtonInterfaceLubna {
 
 	boolean buttonState;
+	private Object hColor;
+	private Object color;
 	
 	
 	public ButtonTyler(int x, int y, int w, int h, String text, Action action) {
@@ -32,20 +34,21 @@ public class ButtonTyler extends Button implements ButtonInterfaceLubna {
 
 	@Override
 	public void setColor(Color color) {
-	
+		this.color = color;
+		this.hColor = color;
 		
 	}
 
 	@Override
 	public void highlight() {
 		// TODO Auto-generated method stub
-		
+		this.color = this.hColor;
 	}
 
 	@Override
 	public void dim() {
 		// TODO Auto-generated method stub
-		
+		this.color = Color.gray;
 	}
 
 }
