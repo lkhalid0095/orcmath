@@ -25,10 +25,14 @@ public class ButtonTyler extends Button implements ButtonInterfaceLubna {
 	}
 	public void drawButton(Graphics2D g, boolean hover) {
 		if(buttonState) {
-			
+			highlight();
+			g.drawOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
+			g.fillOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
 		}
 		else {
-			
+			dim();
+			g.drawOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
+			g.fillOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
 		}
 	}
 
