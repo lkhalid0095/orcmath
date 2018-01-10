@@ -4,6 +4,8 @@ import guiTeacher.GUIApplication;
 
 public class SimonGameLubna extends GUIApplication {
 
+	public static SimonGameLubna game;
+	public static SimonScreenLubna screen;
 	public SimonGameLubna(int width, int height) {
 		super(width, height);
 		setVisible(true);
@@ -11,14 +13,14 @@ public class SimonGameLubna extends GUIApplication {
 
 	@Override
 	public void initScreen() {
-		SimonScreenLubna screen = new SimonScreenLubna(getWidth(),getHeight());
+		screen = new SimonScreenLubna(getWidth(),getHeight());
 		setScreen(screen);
 
 	}
 
 	public static void main(String[] args) {
-		SimonGameLubna s = new SimonGameLubna(800,600);
-		Thread runner = new Thread(s);
+		game = new SimonGameLubna(800,550);
+		Thread runner = new Thread(game);
 		runner.start();
 
 	}

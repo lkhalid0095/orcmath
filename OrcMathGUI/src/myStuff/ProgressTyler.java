@@ -6,12 +6,21 @@ import guiTeacher.components.Component;
 
 public class ProgressTyler extends Component implements ProgressInterfaceLubna {
 
-	boolean progress;
+	private int round;
+	private int sequenceSize;
+	private ProgressInterfaceLubna progress;
+	private boolean lose;
 	
+
 	public ProgressTyler(int x, int y, int w, int h) {
 		super(x, y, w, h);
-		update();
 		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void update(Graphics2D g) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -20,27 +29,18 @@ public class ProgressTyler extends Component implements ProgressInterfaceLubna {
 		
 	}
 
+
 	@Override
-	public void setRound(int roundNumber) {
-		// TODO Auto-generated method stub
+	public void setRound(int i) {
+		this.round = i;
 		
 	}
 
 	@Override
-	public void setSequenceSize(int size) {
-		// TODO Auto-generated method stub
+	public void setSequenceSize(int i) {
+		this.sequenceSize = i;
 		
 	}
 
-	@Override
-	public void update(Graphics2D g) {
-		if(progress) {
-			system
-		}
-		else {
-			
-		}
-		
-	}
 
 }

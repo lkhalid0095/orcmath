@@ -35,7 +35,7 @@ public class SimonScreenLubna extends ClickableScreen implements Runnable {
 			viewObjects.add(b); 
 		}
 		display = getProgress();
-		round = new TextLabel(130,230,300,40,"Let's play Simon!");
+		round = new TextLabel(350,350,300,80,"Let's play Simon!");
 		sequence = new ArrayList<MoveInterfaceLubna>();
 		//add 2 moves to start
 		lastSelectedButton = -1;
@@ -49,11 +49,11 @@ public class SimonScreenLubna extends ClickableScreen implements Runnable {
 
 	private MoveInterfaceLubna randomMove() {
 
-		int bIndex = (int)(Math.random()*button.length);
-		while(bIndex == lastSelectedButton) {
-			bIndex = (int)(Math.random()*button.length);
+		int sequenceIndex = (int)(Math.random()*button.length);
+		while(sequenceIndex == lastSelectedButton) {
+			sequenceIndex = (int)(Math.random()*button.length);
 		}
-		return getMove(bIndex);
+		return getMove(sequenceIndex);
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class SimonScreenLubna extends ClickableScreen implements Runnable {
 	 */
 	private MoveInterfaceLubna getMove(int bIndex) {
 		// TODO Auto-generated method stub
-		return null;
+		return new MoveTyler(button[bIndex]);
 	}
 
 	/**
@@ -70,20 +70,25 @@ public class SimonScreenLubna extends ClickableScreen implements Runnable {
 	 * @return
 	 */
 	private ProgressInterfaceLubna getProgress() {
-		// TODO Auto-generated method stub
-		return null;
+		return new ProgressTyler(400,400,300,100);
 	}
 
 	private void addButtons() {
-		int numOfButtons = 6;
+		int numOfButtons = 4;
 		button = new ButtonInterfaceLubna[numOfButtons];
-		Color[] buttonColors = {Color.blue, Color.red, Color.magenta, Color.yellow, Color.green, Color.orange};
+		Color[] buttonColors = {Color.blue, Color.red, Color.magenta, Color.green,};
 		for(int i=0; i<numOfButtons; i++) {
 			final ButtonInterfaceLubna b = getAButton();
-			button[i] = b;
+			
 			b.setColor(buttonColors[i]);
-			b.setX((int) Math.cos(i*(Math.PI/2)));
-			b.setY((int) Math.sin(i*(Math.PI/2)));//make a circle
+			double cx = b.getWidth() / 2;
+			double cy = b.getHeight() / 2;
+			double angle = (i * (2 * Math.PI)) / button.length;
+		    double x = cx + 110.0 * Math.cos(angle);                
+		    double y = cy + 110.0 * Math.sin(angle); 
+		    b.setColor(buttonColors[i]); 
+		    b.setX(200+x);
+		    b.setY(200+y);
 			b.setAction(new Action(){
 
 				public void act(){
@@ -116,6 +121,7 @@ public class SimonScreenLubna extends ClickableScreen implements Runnable {
 				}
 
 			});
+			button[i] = b;
 		}
 	}
 
@@ -124,7 +130,7 @@ public class SimonScreenLubna extends ClickableScreen implements Runnable {
 	 */
 	private ButtonInterfaceLubna getAButton() {
 
-		return null;
+		return new ButtonTyler(0,0,40,40,"",Color.blue,null);
 	}
 	private void changeText(String s) {
 		Thread blink = new Thread(new Runnable(){
@@ -168,12 +174,10 @@ public class SimonScreenLubna extends ClickableScreen implements Runnable {
 		for(int i=0; i<sequence.size(); i++) {
 			if(b!= null) {
 				b.dim();
+			}
 				b=sequence.get(i).getAButton();
 				b.highlight();
-				int sleepTime = Math.abs((800-6*roundNumber));
-				Thread blink = new Thread(new Runnable(){
-
-					public void run(){
+				int sleepTime =Math.abs((800-6*roundNumber));
 						try {
 							Thread.sleep(sleepTime);
 						} catch (InterruptedException e) {
@@ -181,13 +185,7 @@ public class SimonScreenLubna extends ClickableScreen implements Runnable {
 							e.printStackTrace();
 						}
 					}
-
-				});
-				blink.start();
-			}
-		}
 		b.dim();
+			}
 	}
 
-
-}

@@ -12,6 +12,9 @@ public interface ButtonInterfaceLubna extends Clickable {
 	void highlight();
 
 	void dim();
+	void getAButton();
+	void setX(double d);
+	void setY(double d);
 
 
 }
