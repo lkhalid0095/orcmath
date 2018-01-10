@@ -3,6 +3,8 @@ package myStuff;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
+import com.itextpdf.awt.geom.misc.RenderingHints;
+
 import guiTeacher.components.Action;
 import guiTeacher.components.Button;
 
@@ -24,6 +26,8 @@ public class ButtonTyler extends Button implements ButtonInterfaceLubna {
 
 	}
 	public void drawButton(Graphics2D g, boolean hover) {
+		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+				RenderingHints.VALUE_ANTIALIAS_ON);
 		if(buttonState) {
 			highlight();
 			g.drawOval(this.getX(), this.getY(), this.getWidth(), this.getHeight());
@@ -47,12 +51,14 @@ public class ButtonTyler extends Button implements ButtonInterfaceLubna {
 	public void highlight() {
 		// TODO Auto-generated method stub
 		this.color = this.hColor;
+		buttonState = true;
 	}
 
 	@Override
 	public void dim() {
 		// TODO Auto-generated method stub
 		this.color = Color.gray;
+		buttonState = false;
 	}
 
 }
