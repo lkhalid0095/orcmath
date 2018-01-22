@@ -1,7 +1,6 @@
 package practiceFinal;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
 import java.util.List;
 
 import guiTeacher.components.*;
